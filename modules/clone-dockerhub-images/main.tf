@@ -11,6 +11,7 @@ resource "null_resource" "clone_dockerhub_images" {
     environment = {
       AWS_ACCOUNT_ID = local.aws_account_id
       AWS_REGION     = local.aws_region
+      PLATFORM       = var.platform
     }
   }
 }

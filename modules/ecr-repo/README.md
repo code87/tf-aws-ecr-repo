@@ -1,6 +1,6 @@
 # ECR Repo
 
-Current version: `v0.0.3`
+Current version: `v0.0.4`
 
 Terraform module for creating AWS ECR Repository.
 
@@ -9,7 +9,7 @@ Terraform module for creating AWS ECR Repository.
 
 ```terraform
 module "my_repo" {
-  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.3"
+  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.4"
 
   name        = "my_repo"
   keep_images = 5

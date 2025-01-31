@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.4 (Jan 31 2025)
+
+* `platform` variable added to `clone-github-images` module
+
+
 ## v0.0.3 (Aug 7 2024)
 
 * Terraform 1.3+ is now required

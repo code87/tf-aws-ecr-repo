@@ -6,6 +6,8 @@
 #
 # AWS_ACCOUNT_ID must present in env.
 # AWS_REGION must present in env.
+# PLATFORM must be present in env.
+#
 # Images list must be passed as space-separated commmand line arguments. Example:
 #   ./clone-images.sh ruby:2.7.5-buster postgres:13.8 redis:7.0.5
 #
@@ -18,7 +20,7 @@ IMAGES=$@
 
 for IMAGE in ${IMAGES[*]}; do
   echo "Processing $IMAGE..."
-  docker pull $IMAGE
+  docker pull --platform $PLATFORM $IMAGE
   docker tag $IMAGE $ECR_ROOT/$IMAGE
-  docker push $ECR_ROOT/$IMAGE
+  docker push --platform $PLATFORM $ECR_ROOT/$IMAGE
 done

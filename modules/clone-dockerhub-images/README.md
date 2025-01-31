@@ -1,6 +1,6 @@
 # Clone DockerHub Images
 
-Current version: `v0.0.3`
+Current version: `v0.0.4`
 
 This Terraform module pulls images from Docker Hub and pushes them to AWS ECR Registry
 in order to avoid `429 Too Many Requests` error caused by Docker Hub rate limit.
@@ -10,19 +10,19 @@ in order to avoid `429 Too Many Requests` error caused by Docker Hub rate limit.
 
 ```terraform
 module "ruby" {
-  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.3"
+  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.4"
 
   name   = "ruby"
 }
 
 module "postgres" {
-  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.3"
+  source = "github.com/code87/tf-aws-containers//modules/ecr-repo?ref=v0.0.4"
 
   name   = "postgres"
 }
 
 module "clone_images" {
-  source = "github.com/code87/tf-aws-containers//modules/clone-dockerhub-images?ref=v0.0.3"
+  source = "github.com/code87/tf-aws-containers//modules/clone-dockerhub-images?ref=v0.0.4"
 
   images = ["ruby:2.7.5-buster", "postgres:13.8"]
 
@@ -56,6 +56,8 @@ _See also_: [examples/clone-dockerhub-images/](https://github.com/code87/tf-aws-
 
 * `images` (required, `list(string)`) - list of Docker Hub images with versions specified.<br/>
   Example: `["ruby:2.7.5-buster", "postgresql:13.2"]`
+
+* `platform` (optional, `string`) - Docker image platform. Default: `linux/amd64`.
 
 
 ## Outputs

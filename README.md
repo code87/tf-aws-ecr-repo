@@ -1,6 +1,6 @@
 # Terraform Modules for AWS Containers
 
-Current version: `v0.0.3`
+Current version: `v0.0.4`
 
 ## List of Modules
 
